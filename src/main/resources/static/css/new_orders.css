@@ -1,0 +1,150 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: black;
+	font-weight: Century Gothic;
+	font-family: tahoma;
+	color: black;
+	margin: 0;
+	background: url('../images/bg8.jpg') no-repeat;
+	background-size: cover;
+}
+
+.wrapper {
+	width: 705px;
+	margin: 20px auto;
+	padding: 20px;
+}
+.navbar{
+    height: 80px;
+    width: 100%;
+    background:rgba(0,0,0,0.8);
+}
+.logo{
+    width: 129px;
+    height: 66px;
+    padding: 8px 100px;
+    margin-left: -65px;
+}
+
+.navbar ul{
+    float:right;
+    margin-right:20px;
+}
+.navbar ul li{
+    list-style:none;
+    margin: 0 8px;
+    display: inline-block;
+    line-height: 80px;
+
+}
+.navbar ul li a{
+    text-decoration: none;
+    color:white;
+    font-size:20px;
+    padding: 6px 13px;
+    font-family:'Roboto',sans-serif;
+    transition: .4s;
+}
+.navbar ul li a.active,
+.navbar ul li a:hover{
+    background:#cc0000;
+    border-radius: 2px;
+
+}
+h1 {
+	text-align: center;
+	color: white;
+}
+
+.border {
+	width: 184px;
+	height: 10px;
+	background: maroon;
+	margin: 12px auto;
+	margin-left: 262px;
+}
+
+.image {
+	height: 70px;
+	width: 70px;
+	background: url("images/logo.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
+	border-radius: 50px;
+	position: absolute;
+	top: 9%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.clear {
+	clear: both;
+}
+
+.items {
+	display: block;
+	margin: 20px 0;
+}
+
+.item {
+	background-color: white;
+	float: left;
+	margin: 0 10px 10px 0;
+	width: 205px;
+	padding: 10px;
+}
+
+.item img {
+	display: block;
+	margin: auto;
+}
+
+h2 {
+	font-size: 12p;
+	display: block;
+	border: 1p solid #ccc;
+	margin: 0 0 10px 0;
+	padding: 0 0 5px 0;
+}
+
+button {
+	border: 1p solid #ef4478;
+	padding: 4px 14px;
+	background-color: maroon;
+	color: white;
+	text-transform: uppercase;
+	float: right;
+	margin: 5px 0;
+	font-weight: 400;
+	cursor: pointer;
+	font-family: tahoma;
+	border-radius: 50px;
+}
+
+button:hover {
+	background: #cc0000;
+	color: white;
+}
+
+button:focus {
+	outline: none !important;
+}
+
+span {
+	float: right;
+}
+
+p {
+	font-size: 14px;
+}
+
+.shopping-cart {
+	display: inline-block;
+	width: 27px;
+	height: 24px;
+	margin: 0 10px 0 0;
+}

@@ -1,0 +1,118 @@
+body{
+    margin:0;
+    padding: 0;
+    font-weight: Century Gothic;
+    background:url('../images/bg8.jpg') no-repeat;
+    background-size: cover;
+    
+
+}
+.wrapper{
+    background: url('../images/bg8.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.navbar{
+    height: 80px;
+    width: 100%;
+    background:rgba(0,0,0,0.8);
+}
+.logo{
+    width: 129px;
+    height: 66px;
+    padding: 8px 100px;
+    margin-left: -65px;
+}
+
+.navbar ul{
+    float:right;
+    margin-right:20px;
+}
+.navbar ul li{
+    list-style:none;
+    margin: 0 8px;
+    display: inline-block;
+    line-height: 80px;
+
+}
+.navbar ul li a{
+    text-decoration: none;
+    color:white;
+    font-size:20px;
+    padding: 6px 13px;
+    font-family:'Roboto',sans-serif;
+    transition: .4s;
+}
+.navbar ul li a.active,
+.navbar ul li a:hover{
+    background:#cc0000;
+    border-radius: 2px;
+
+}
+.container{
+    height:75vh;
+    width:30%;
+    background:rgba(0,0,0,0.6);
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    padding: 0 20px;
+
+}
+.image{
+    height: 70px;
+    width:70px;
+    background:url("images/logo.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+    position: absolute;
+    top:-4%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+}
+.container h1{
+    color:white;
+    margin-top: 10px;
+
+}
+.container{
+    color: white;
+    margin-top: 60px;
+    font-size: large;
+
+
+}
+
+.btn{
+    background: no-repeat;
+    outline: none;
+    border: 1px solid white;
+    color: white;
+    width:50%;
+    padding: 7px 15px;
+    font-size: large;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top:50px;
+}
+.btn:hover{
+    background: maroon;
+    color: white;
+}
+.name{
+    background: none;
+    color: white;
+}
+.textbox{
+    width:100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding:20px 0;
+    overflow: hidden;
+    background: none;
+    
+
+}

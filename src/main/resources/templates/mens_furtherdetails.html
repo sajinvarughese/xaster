@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Further Details</title>
+<link rel="stylesheet" th:href="@{/css/measurement.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet"
+	th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}" />
+</head>
+<style>
+select {
+	margin-left: 50px;
+}
+</style>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<a class="navbar-brand" href="#"> <!-- Add logo with size of 90*80 -->
+			<img th:src="@{/images/bg10.jpg}" width="90" height="80" alt="">
+		</a>
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item"><a class="nav-link" th:href="login_home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" th:href="orderhistory">Order
+					History</a></li>
+			<li class="nav-item"><a class="nav-link" href="neworders">New
+					Orders</a></li>
+			<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
+		</ul>
+
+
+	</nav>
+	<div class="sigup">
+		<h1 class="topic">Further Details</h1>
+		<div class="border"></div>
+		<div class="image"></div>
+
+		<form class="form-horizontal" action="#"
+			th:action="@{/mens_furtherdetails}" th:object="${orderDetails}"
+			method="post">
+			<!-- <input type ="hidden" th:field="${orderDetails.chest}" th:value="${orderDetails.chest}" />
+			<input type ="hidden" th:field="${orderDetails.id}" th:value="${orderDetails.id}" />
+			<input type ="hidden" th:field="${orderDetails.neck}" th:value="${orderDetails.neck}" />
+			<input type ="hidden" th:field="${orderDetails.stomach}" th:value="${orderDetails.stomach}" />
+			<input type ="hidden" th:field="${orderDetails.waist}" th:value="${orderDetails.waist}" />
+			<input type ="hidden" th:field="${orderDetails.shoulder}" th:value="${orderDetails.shoulder}" />
+			<input type ="hidden" th:field="${orderDetails.length}" th:value="${orderDetails.length}" />
+			<input type ="hidden" th:field="${orderDetails.wrist}" th:value="${orderDetails.wrist}" />
+			<input type ="hidden" th:field="${orderDetails.vestLength}" th:value="${orderDetails.vestLength}" />
+			<input type ="hidden" th:field="${orderDetails.orderType}" th:value="${orderDetails.orderType}" /> -->
+			<table border="0">
+				<tr>
+					<th>Choose dress material:<input type="text" class="name"
+						th:field="*{dressMaterial}" placeholder="dress material"
+						style="margin-left: 6px"></th>
+				</tr>
+				<tr>
+					<th><br>Description:<textarea type="text" class="name"
+							th:field="*{description}"
+							placeholder="Enter customized design,pattern,..etc"
+							style="margin-left: 119px"></textarea></th>
+				</tr>
+				<tr>
+					<th><br>Further Design:<input type="file" class="xxx"
+						accept="image/*" style="margin-left: -1px;"> <label
+						for="file"> <i class="material-icons"> </i>
+
+					</label>&nbsp;</th>
+				</tr>
+				<tr>
+					<th><br>Quantity:<input type="text" class="name"
+						placeholder="in inches" th:field="*{quantity}"
+						style="margin-left: 140px"></th>
+				</tr>
+				<tr>
+					<th><br>Delivery Date:<input type="text" class="name"
+						placeholder="dd/mm/yyyy" th:field="*{deliveryDate}"
+						style="margin-left: 140px"></th>
+				</tr>
+				<tr>
+					<th><br>
+						<p>(Total amount of the dress will be sent to your number at
+							the earliest)</p></th>
+				</tr>
+
+				<tr>
+					<th><br> <input class=btn1 type="submit" value="Submit"
+						style="margin-left: 10px" /></th>
+
+				</tr>
+
+			</table>
+			<div class="alert alert-primary" role="alert" th:text="${success}"
+				th:if="${success}"></div>
+	</div>
+	<script type="text/javascript"
+		th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

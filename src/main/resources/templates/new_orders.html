@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New order</title>
+<link rel="stylesheet" th:href="@{/css/new_orders.css}">
+<link rel="stylesheet"
+	th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}" />
+</head>
+<body>
+
+	<div class="wrapper">
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+			<a class="navbar-brand" href="#"> <!-- Add logo with size of 90*80 -->
+				<img th:src="@{/images/bg10.jpg}" width="90" height="80" alt="">
+			</a>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link" th:href="login_home">Home</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="orderhistory">Order
+						History</a></li>
+				<li class="nav-item"><a class="nav-link" href="neworders">New
+						Orders</a></li>
+				<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
+			</ul>
+
+
+		</nav>
+		<h1>New order</h1>
+		<div class="border"></div>
+		<div class="image"></div>
+		<span><i class="shopping-cart"></i></span>
+		<div class="clear"></div>
+		<div class="items">
+			<div class="item">
+				<img th:src="@{/images/suit.jpg}" alt=""> <br>
+				<h2>Suits</h2>
+				<p>Usual price:Rs350</p>
+				<a th:href="suit_measure"><button class="Select" type="button">
+						choose</button></a>
+
+			</div>
+			<div class="item">
+				<img th:src="@{/images/trouser.jpg}" alt=""> <br>
+				<h2>Trousers</h2>
+				<p>Usual price:Rs350</p>
+				<a th:href="trouser_measure"><button class="Select"
+						type="button">choose</button></a>
+
+			</div>
+			<div class="item">
+				<img th:src="@{/images/shirt.jpeg}" alt=""> <br>
+				<h2>Shirts</h2>
+				<p>Usual price:Rs350</p>
+				<a th:href="shirt_measure"><button class="Select" type="button">
+						choose</button></a>
+
+			</div>
+			<div class="item">
+				<img th:src="@{/images/blouse.jpeg}" alt=""> <br>
+				<h2>Blouse</h2>
+				<p>Usual price:Rs120</p>
+				<a th:href="blouse_measure"><button class="Select" type="button">
+						choose</button></a>
+
+			</div>
+			<div class="item">
+				<img th:src="@{/images/kurtis.jpg}" alt=""> <br>
+				<h2>Kurti</h2>
+				<p>Usual price:Rs.150</p>
+				<a th:href="kurtis_measure"><button class="Select" type="button">
+						choose</button></a>
+
+			</div>
+			<div class="item">
+				<img th:src="@{/images/gown.jpg}" alt=""> <br>
+				<h2>Gown</h2>
+				<p>Usual price:Rs350</p>
+				<a th:href="gown_measure"><button class="Select" type="button">
+						choose</button></a>
+
+			</div>
+
+
+		</div>
+
+	</div>
+
+</body>
+</html>

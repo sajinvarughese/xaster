@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Measurements</title>
+<link rel="stylesheet" th:href="@{/css/measurement.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet"
+	th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}" />
+</head>
+<style>
+select {
+	margin-left: 50px;
+}
+</style>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<a class="navbar-brand" href="#"> <!-- Add logo with size of 90*80 -->
+			<img th:src="@{/images/bg10.jpg}" width="90" height="80" alt="">
+		</a>
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item"><a class="nav-link" th:href="login_home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" th:href="orderhistory">Order
+					History</a></li>
+			<li class="nav-item"><a class="nav-link" href="neworders">New
+					Orders</a></li>
+			<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
+		</ul>
+
+
+	</nav>
+	<div class="sigup">
+		<h1 class="topic">Measurements</h1>
+		<div class="border"></div>
+		<div class="image"></div>
+		<form class="form-horizontal" action="#" th:action="@{/gown_measure}"
+			th:object="${orderDetails}" method="post">
+			<table border="0">
+				<tr>
+					<th>Length:<input type="text" class="name"
+						th:field="*{length}" placeholder="in inches"
+						style="margin-left: 127px"></th>
+				</tr>
+				<tr>
+					<th><br>Upper Chest:<input type="text" class="name"
+						th:field="*{upperChest}" placeholder="in inches"
+						style="margin-left: 74px"></th>
+				</tr>
+				<tr>
+					<th><br>Chest:<input type="text" class="name"
+						th:field="*{chest}" placeholder="in inches"
+						style="margin-left: 137px"></th>
+
+				</tr>
+				<tr>
+					<th><br>Waist:<input type="text" class="name"
+						th:field="*{waist}" placeholder="in inches"
+						style="margin-left: 142px"></th>
+				</tr>
+				<tr>
+					<th><br>Stomach:<input type="text" class="name"
+						th:field="*{stomach}" placeholder="in inches"
+						style="margin-left: 111px"></th>
+				</tr>
+				<tr>
+					<th><br>Hips:<input type="text" class="name"
+						th:field="*{hips}" placeholder="in inches"
+						style="margin-left: 152px"></th>
+				</tr>
+				<tr>
+					<th><br>Shoulder:<input type="text" class="name"
+						th:field="*{shoulder}" placeholder="in inches"
+						style="margin-left: 111px"></th>
+
+				</tr>
+				<tr>
+					<th><br>Front Neck Depth:<input type="text" class="name"
+						th:field="*{frontNeckDepth}" placeholder="in inches"
+						style="margin-left: 33px"></th>
+				</tr>
+				<tr>
+					<th><br>Sleeve Length:<input type="text" class="name"
+						th:field="*{sleeveLength}" placeholder="in inches"
+						style="margin-left: 62px"></th>
+				</tr>
+				<tr>
+					<th><br>Sleeve Round:<input type="text" class="name"
+						th:field="*{sleeveRound}" placeholder="in inches"
+						style="margin-left: 62px"></th>
+				</tr>
+
+				<tr>
+					<th><input class=btn1 type="submit" value="Next"
+						style="margin-left: 10px" /></th>
+					<a th:href="neworders"><input class="btn" type="button"
+						value="Back" style="margin-top: 22px;"></a>
+				</tr>
+			</table>
+	</div>
+	<script type="text/javascript"
+		th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

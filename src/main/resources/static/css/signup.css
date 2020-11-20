@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "monsterrat",sans-serif;
+
+}
+.navbar{
+    height: 80px;
+    width: 100%;
+    background:rgba(0,0,0,0.8);
+}
+.logo{
+    width: 129px;
+    height: 66px;
+    padding: 8px 100px;
+    margin-left: -65px;
+}
+
+.navbar ul{
+    float:right;
+    margin-right:20px;
+}
+.navbar ul li{
+    list-style:none;
+    margin: 0 8px;
+    display: inline-block;
+    line-height: 80px;
+
+}
+.navbar ul li a{
+    text-decoration: none;
+    color:white;
+    font-size:20px;
+    padding: 6px 13px;
+    font-family:'Roboto',sans-serif;
+    transition: .4s;
+}
+.navbar ul li a.active,
+.navbar ul li a:hover{
+    background:#cc0000;
+    border-radius: 2px;
+
+}
+.sigup{
+    background:url('../images/bg.jpg') no-repeat;
+    padding:120px 381px;
+    background-size:cover;
+    height: 100vh;
+    
+    color: white;
+}
+.sigup h1{
+    text-align: center;
+    color: white;
+    font-size: 32px;
+}
+.border{
+   
+    width: 165px;
+    height: 10px;
+    background: maroon;
+    margin: 12px auto;
+}
+.textbox{
+    width:100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding:8px 0;
+    overflow: hidden;
+    background: none;
+    
+
+}
+
+.btn{
+    height: 35px;
+    width:129px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffb3b3;
+    background: maroon;
+    border:1px solid #cc0000;
+    outline:none;
+    cursor:pointer;
+    border-radius: 25px;
+    transition: .5s;
+    margin-left: 35px;
+}
+.btn1{
+    height: 35px;
+    width:129px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffb3b3;
+    background: maroon;
+    border:1px solid #cc0000;
+    outline:none;
+    cursor:pointer;
+    border-radius: 25px;
+    transition: .5s;
+    margin-left: 35px;
+}
+.btn:hover{
+    background: #cc0000;
+}
+.btn1:hover{
+    background: #cc0000;
+}
+.gen{
+    padding-right: 54px;
+}
+.name{
+    background: none;
+    color: white;
+}
+.name1{
+    background: none;
+    color: white;
+    width: 168px;
+}
+.dob{
+    margin-left: 45px;
+}
+

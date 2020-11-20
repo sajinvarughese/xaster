@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+<link rel="stylesheet" th:href="@{/css/contact.css}">
+<link rel="stylesheet"
+	th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}" />
+
+</head>
+<body>
+	<div class="wrapper">
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+			<a class="navbar-brand" href="#"> <!-- Add logo with size of 90*80 -->
+				<img th:src="@{/images/bg10.jpg}" width="90" height="80" alt="">
+			</a>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link" th:href="home">Home</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="about">About</a></li>
+				<li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+				<li class="nav-item"><a class="nav-link" href="login">Login</a></li>
+				<li class="nav-item"><a class="nav-link" href="signup">Signup</a></li>
+			</ul>
+
+
+		</nav>
+	</div>
+	<div class="container">
+		<center>
+			<h1>Contact Us</h1>
+			<div class="image"></div>
+			<div class="textbox">
+				<table border="0">
+					<tr>
+						<th>Name:<input type="text" class="name"
+							placeholder="Full Name" style="margin-left: 102px"></th>
+					</tr>
+					<tr>
+						<th><br>Email:<input type="text" class="name"
+							placeholder="Email" style="margin-left: 107px"></th>
+					</tr>
+					<tr>
+						<th><br>Subject:<input type="text" class="name"
+							placeholder="Subject" style="margin-left: 97px"></th>
+
+					</tr>
+					<tr>
+						<th><br>Message:<textarea type="text" class="name"
+								placeholder="Message" style="margin-left: 90px"></textarea></th>
+					</tr>
+
+					<tr>
+						<th><br> <input class="btn btn-light" type="submit"
+							name="" value="Send"></th>
+					</tr>
+				</table>
+			</div>
+		</center>
+
+	</div>
+	<script type="text/javascript"
+		th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

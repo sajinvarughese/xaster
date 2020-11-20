@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order History</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet"
+	th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}" />
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<a class="navbar-brand" href="#"> <!-- Add logo with size of 90*80 -->
+			<img th:src="@{/images/bg10.jpg}" width="90" height="80" alt="">
+		</a>
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item"><a class="nav-link" th:href="login_home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" th:href="orderhistory">Order
+					History</a></li>
+			<li class="nav-item"><a class="nav-link" href="neworders">New
+					Orders</a></li>
+			<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
+		</ul>
+
+
+	</nav>
+	<div class="container">
+		<center>
+			<h1>Order History</h1>
+			<div class="image"></div>
+
+			<div th:if="${not #lists.isEmpty(orderDetailList)}">
+				<table class="table table-dark">
+					<tr>
+						<th>Order Id</th>
+						<th>Name</th>
+						<th>Delivery Date</th>
+					</tr>
+					<tr th:each="orderDetails : ${orderDetailList}">
+						<td th:text="${orderDetails.id}"></td>
+						<td th:text="${orderDetails.orderType}"></td>
+						<td th:text="${orderDetails.deliveryDate}"></td>
+					</tr>
+				</table>
+			</div>
+
+		</center>
+
+	</div>
+
+</body>
+</html>
