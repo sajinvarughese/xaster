@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -28,6 +29,17 @@ public class Login {
 	/** The role. */
 	String role;
 	
+	@Transient
+	String otp;
+	
+	public String getOtp() {
+		return otp;
+	}
+
+	public void setOtp(String otp) {
+		this.otp = otp;
+	}
+
 	/** The user details. */
 	@OneToOne
 	@JoinColumn(name="user_id")

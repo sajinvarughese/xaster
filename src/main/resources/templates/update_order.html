@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Measurements</title>
+<link rel="stylesheet" th:href="@{/css/measurement.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet"
+	th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}" />
+</head>
+<style>
+select {
+	margin-left: 50px;
+}
+</style>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<a class="navbar-brand" href="#"> <!-- Add logo with size of 90*80 -->
+			<img th:src="@{/images/bg10.jpg}" width="90" height="80" alt="">
+		</a>
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item"><a class="nav-link" th:href="admin_home">Home</a></li>
+			<li class="nav-item"><a class="nav-link" th:href="all_orders">Orders</a></li>
+			<li class="nav-item"><a class="nav-link" th:href="all_users">Customers</a></li>
+			<li class="nav-item"><a class="nav-link" th:href="logout">Logout</a></li>
+		</ul>
+
+
+	</nav>
+	<div class="sigup col-md-12">
+		<h1 class="topic" th:inline="text">[[${orderDetails.orderType} ]]
+			Measurements</h1>
+		<form class="form-horizontal" action="#" th:action="@{/update_order}"
+			th:object="${orderDetails}" method="post">
+			<input type="hidden" th:field="${orderDetails.id}"
+				th:value="${orderDetails.id}" /> <input type="hidden"
+				th:field="${orderDetails.orderType}" th:value="${orderDetails.id}" />
+			<input type="hidden" th:field="${orderDetails.userDetails}"
+				th:value="${orderDetails.id}" />
+			<div class="row">
+				<div class="col-md-6">
+					<table border="0">
+						<tr
+							th:if="*{orderType} == 'Kurti' or *{orderType} == 'Suit' or *{orderType} == 'Shirt' or *{orderType} == 'Blouse' or *{orderType} == 'Gown'">
+							<th>Shoulder:<input type="text" class="name"
+								placeholder="in inches" th:field="*{shoulder}"
+								style="margin-left: 110px"></th>
+						</tr>
+						<tr
+							th:if="*{orderType} == 'Kurti' or  *{orderType} == 'Suit' or *{orderType} == 'Shirt' or *{orderType} == 'Gown'">
+							<th><br>Chest:<input type="text" class="name"
+								placeholder="in inches" th:field="*{chest}"
+								style="margin-left: 140px"></th>
+						</tr>
+						<tr
+							th:if="*{orderType} == 'Kurti' or *{orderType} == 'Blouse' or *{orderType} == 'Gown'">
+							<th><br>Front Neck Depth:<input type="text"
+								class="name" placeholder="in inches"
+								th:field="*{frontNeckDepth}" style="margin-left: 27px"></th>
+
+						</tr>
+						<tr th:if="*{orderType} == 'Kurti' or *{orderType} == 'Blouse'">
+							<th><br>Back Neck Depth:<input type="text" class="name"
+								placeholder="in inches" th:field="*{backNeckDepth}"
+								style="margin-left: 30px"></th>
+						</tr>
+						<tr
+							th:if="*{orderType} == 'Kurti' or *{orderType} == 'Blouse' or *{orderType} == 'Gown'">
+							<th><br>Sleeve Length:<input type="text" class="name"
+								placeholder="in inches" th:field="*{sleeveLength}"
+								style="margin-left: 60px"></th>
+						</tr>
+						<tr
+							th:if="*{orderType} == 'Kurti' or *{orderType} == 'Blouse' or *{orderType} == 'Gown'">
+							<th><br>Sleeve Round:<input type="text" class="name"
+								placeholder="in inches" th:field="*{sleeveRound}"
+								style="margin-left: 60px"></th>
+						</tr>
+						<tr
+							th:if="*{orderType} == 'Kurti' or *{orderType} == 'Suit' or *{orderType} == 'Shirt' or *{orderType} == 'Trouser' or *{orderType} == 'Blouse' or *{orderType} == 'Gown'">
+							<th><br>Waist:<input type="text" class="name"
+								placeholder="in inches" th:field="*{waist}"
+								style="margin-left: 137px"></th>
+
+						</tr>
+						<tr
+							th:if="*{orderType} == 'Kurti' or *{orderType} == 'Trouser' or *{orderType} == 'Gown'">
+							<th><br>Hips:<input type="text" class="name"
+								placeholder="in inches" th:field="*{hips}"
+								style="margin-left: 145px"></th>
+						</tr>
+						<tr th:if="*{orderType} == 'Kurti'">
+							<th><br>Bottom Width:<input type="text" class="name"
+								placeholder="in inches" th:field="*{bottomWidth}"
+								style="margin-left: 63px"></th>
+
+						</tr>
+						<tr th:if="*{orderType} == 'Kurti'">
+							<th><br> Side Slit Length:<input type="text"
+								class="name" placeholder="in inches"
+								th:field="*{sideSlitLength}" style="margin-left: 47px"></th>
+						</tr>
+						<tr
+							th:if="*{orderType} == 'Kurti' or *{orderType} == 'Suit' or *{orderType} == 'Shirt' or *{orderType} == 'Trouser' or *{orderType} == 'Blouse' or *{orderType} == 'Gown'">
+							<th><br> Length:<input type="text" class="name"
+								placeholder="in inches" th:field="*{length}"
+								style="margin-left: 135px"></th>
+						</tr>
+						<tr th:if="*{orderType} == 'Suit' or *{orderType} == 'Shirt'">
+							<th><br>Neck:<input type="text" class="name"
+								placeholder="in inches" th:field="*{neck}"
+								style="margin-left: 84px"></th>
+						</tr>
+
+						<tr
+							th:if="*{orderType} == 'Suit' or *{orderType} == 'Shirt' or *{orderType} == 'Gown'">
+							<th><br>Stomach:<input type="text" class="name"
+								placeholder="in inches" th:field="*{stomach}"
+								style="margin-left: 46px"></th>
+
+						</tr>
+
+						<tr th:if="*{orderType} == 'Suit' or *{orderType} == 'Shirt'">
+							<th><br>Wrist:<input type="text" class="name"
+								placeholder="in inches" th:field="*{wrist}"
+								style="margin-left: 79px"></th>
+
+						</tr>
+						<tr th:if="*{orderType} == 'Suit' or *{orderType} == 'Shirt'">
+							<th><br>Vest Length:<input type="text" class="name"
+								placeholder="in inches" th:field="*{vestLength}"
+								style="margin-left: 27px"></th>
+						</tr>
+						<tr th:if="*{orderType} == 'Trouser'">
+							<th><br>Crotch:<input type="text" class="name"
+								placeholder="in inches" th:field="*{crotch}"
+								style="margin-left: 92px"></th>
+
+						</tr>
+						<tr th:if="*{orderType} == 'Trouser'">
+							<th><br>Thigh:<input type="text" class="name"
+								placeholder="in inches" th:field="*{thigh}"
+								style="margin-left: 93px"></th>
+						</tr>
+						<tr th:if="*{orderType} == 'Trouser'">
+							<th><br>Width:<input type="text" class="name"
+								placeholder="in inches" th:field="*{width}"
+								style="margin-left: 91px"></th>
+						</tr>
+						<tr th:if="*{orderType} == 'Trouser'">
+							<th><br>Inseam:<input type="text" class="name"
+								placeholder="in inches" th:field="*{inseam}"
+								style="margin-left: 79px"></th>
+
+						</tr>
+						<tr th:if="*{orderType} == 'Trouser'">
+							<th><br>Knee:<input type="text" class="name"
+								placeholder="in inches" th:field="*{knee}"
+								style="margin-left: 96px"></th>
+						</tr>
+						<tr th:if="*{orderType} == 'Trouser'">
+							<th><br>Half hem:<input type="text" class="name"
+								placeholder="in inches" th:field="*{halfHem}"
+								style="margin-left: 62px"></th>
+						</tr>
+						<tr th:if="*{orderType} == 'Blouse'">
+							<th><br>Bust:<input type="text" class="name"
+								placeholder="in inches" th:field="*{bust}"
+								style="margin-left: 157px"></th>
+						</tr>
+						<tr th:if="*{orderType} == 'Gown'">
+							<th><br>Upper Chest:<input type="text" class="name"
+								th:field="*{upperChest}" placeholder="in inches"
+								style="margin-left: 74px"></th>
+						</tr>
+					</table>
+				</div>
+				<div class="col-md-6">
+					<table border="0"
+						th:if="*{orderType} == 'Suit' or *{orderType} == 'Trouser' or *{orderType} == 'Shirt' ">
+						<tr>
+							<th>Choose dress material:<input type="text" class="name"
+								th:field="*{dressMaterial}" placeholder="dress material"
+								style="margin-left: 6px"></th>
+						</tr>
+						<tr>
+							<th><br>Description:<textarea type="text" class="name"
+									th:field="*{description}"
+									placeholder="Enter customized design,pattern,..etc"
+									style="margin-left: 119px"></textarea></th>
+						</tr>
+						<tr>
+							<th><br>Further Design:<input type="file" class="xxx"
+								accept="image/*" style="margin-left: -1px;"> <label
+								for="file"> <i class="material-icons"> </i>
+
+							</label>&nbsp;</th>
+						</tr>
+						<tr>
+							<th><br>Quantity:<input type="text" class="name"
+								placeholder="in inches" th:field="*{quantity}"
+								style="margin-left: 140px"></th>
+						</tr>
+						<tr>
+							<th><br>Delivery Date:<input type="text" class="name"
+								placeholder="dd/mm/yyyy" th:field="*{deliveryDate}"
+								style="margin-left: 140px"></th>
+						</tr>
+						<tr>
+							<th><br>
+								<p>(Total amount of the dress will be sent to your number at
+									the earliest)</p></th>
+						</tr>
+
+					</table>
+					<table border="0"
+						th:if="*{orderType} == 'Gown' or *{orderType} == 'Blouse' or *{orderType} == 'Kurti' ">
+						<tr>
+							<th>Choose dress material:<input type="text" class="name"
+								th:field="*{dressMaterial}" placeholder="in inches"
+								style="margin-left: 6px"></th>
+						</tr>
+
+
+						<tr>
+							<th class="dob"><br>Front Neck Design: <select
+								th:field="*{frontNeckDesign}">
+									<option th:value="''" th:text="Choose"></option>
+									<option th:value="'Round'" th:text="Round"></option>
+									<option th:value="'Boat'" th:text="Boat"></option>
+									<option th:value="'Sweet Heart'" th:text="SweetHeart"></option>
+									<option th:value="'High Collar'" th:text="HighCollar"></option>
+									<option th:value="'Pentagon'" th:text="Pentagon"></option>
+									<option th:value="'Other'" th:text="Other"></option>
+							</select></th>
+						</tr>
+						<tr>
+							<th class="dobee"><br>Lining Required: <select
+								th:field="*{liningRequired}">
+									<option th:value="''" th:text="Choose"></option>
+									<option th:value="'Yes'" th:text="Yes"></option>
+									<option th:value="'No'" th:text="No"></option>
+
+							</select></th>
+						</tr>
+						<tr>
+							<th><br>Description:<textarea type="text" class="name"
+									th:field="*{description}"
+									placeholder="Enter customized design,pattern,..etc"
+									style="margin-left: 119px"></textarea></th>
+						</tr>
+						<tr>
+							<th><br>Further Design:<input type="file" class="xxx"
+								accept="image/*" style="margin-left: -1px;"> <label
+								for="file"> <i class="material-icons"> </i>
+
+							</label>&nbsp;</th>
+						</tr>
+						<tr>
+							<th><br>Quantity:<input type="text" class="name"
+								th:field="*{quantity}" placeholder="in inches"
+								style="margin-left: 140px"></th>
+						</tr>
+						<tr>
+							<th><br>Delivery Date:<input type="text" class="name"
+								placeholder="dd/mm/yyyy" th:field="*{deliveryDate}"
+								style="margin-left: 140px"></th>
+						</tr>
+						<tr>
+							<th><br>
+								<p>(Total amount of the dress will be sent to your number at
+									the earliest)</p></th>
+						</tr>
+
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<a class="pull-left" th:href="all_orders"> <input class="btn1"
+						type="button" value="Back" style="margin-top: 22px;"></a>
+				</div>
+				<div class="col-md-6">
+					<input class="btn1 pull-right" type="submit" value="Update"
+						style="margin-top: 22px;" />
+				</div>
+			</div>
+		</form>
+		<div class="alert alert-success" role="alert" th:text="${successMsg}"
+			th:if="${successMsg}"></div>
+		<div class="alert alert-danger" role="alert" th:text="${errorMsg}"
+			th:if="${errorMsg}"></div>
+	</div>
+	<script type="text/javascript"
+		th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.org.onlinetailoring.entity.Login;
@@ -220,4 +222,46 @@ public class UserController {
 		}
 	}
 
+	@GetMapping("/forgot_password")
+	public String forgotPassword(Model model) {
+		model.addAttribute("login", new Login());
+		return "forgot_password";
+	}
+
+	@PostMapping("/sendOTP")
+	public @ResponseBody String sendOTP(@RequestParam String username, HttpSession session) {
+		System.out.println(username);
+		try {
+			String otp = userService.sendOTP(username);
+			session.setAttribute("otp", otp);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "test";
+	}
+
+	/**
+	 * Update password.
+	 *
+	 * @param model the model
+	 * @param login the login
+	 * @param session the session
+	 * @return the string
+	 */
+	@PostMapping("/updatepassword")
+	public String updatePassword(Model model, @ModelAttribute Login login, HttpSession session) {
+		try {
+			if (login.getOtp().equals(session.getAttribute("otp"))) {
+				session.removeAttribute("otp");
+				login.setOtp("");
+				userService.updatePassword(login);
+				model.addAttribute("successMsg", "Successfully updated password");
+			} else {
+				model.addAttribute("errorMsg", "Invalid OTP");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "forgot_password";
+	}
 }

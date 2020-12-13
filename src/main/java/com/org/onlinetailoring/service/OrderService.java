@@ -3,25 +3,28 @@ package com.org.onlinetailoring.service;
 import java.util.List;
 
 import com.org.onlinetailoring.entity.OrderDetails;
+import com.org.onlinetailoring.exception.XasterException;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Interface OrderService.
  */
 public interface OrderService {
-	
+
 	/**
 	 * Gets the order details.
 	 *
-	 * @param OrderId the order id
+	 * @param OrderId            the order id
 	 * @return the order details
+	 * @throws XasterException the xaster exception
 	 */
-	public OrderDetails getOrderDetails(Integer OrderId);
+	public OrderDetails getOrderDetails(Integer OrderId) throws XasterException;
 
 	/**
 	 * Creates the order.
 	 *
-	 * @param orderDetails the order details
+	 * @param orderDetails
+	 *            the order details
 	 * @return the order details
 	 */
 	public OrderDetails createOrder(OrderDetails orderDetails);
@@ -29,7 +32,8 @@ public interface OrderService {
 	/**
 	 * Gets the order details by user id.
 	 *
-	 * @param id the id
+	 * @param id
+	 *            the id
 	 * @return the order details by user id
 	 */
 	public List<OrderDetails> getOrderDetailsByUserId(Integer id);

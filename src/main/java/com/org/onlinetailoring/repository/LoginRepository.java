@@ -31,4 +31,6 @@ public interface LoginRepository extends JpaRepository<Login, Integer>{
 	 */
 	List<Login> findByRole(String role);
 
+	Login findByUsername(String username);
+
 }

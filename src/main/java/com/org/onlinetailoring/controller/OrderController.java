@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.org.onlinetailoring.entity.OrderDetails;
@@ -452,4 +453,45 @@ public class OrderController {
 		}
 	}
 
+	@GetMapping("/update_order")
+	public String updateOrderPage(@RequestParam String id, Model model, HttpSession session) {
+		OrderDetails orderDetails = null;
+		UserDetails userDetails = (UserDetails) session.getAttribute("userDetails");
+		if (null == userDetails) {
+			return "customer_home";
+		} else {
+			try {
+				orderDetails = orderService.getOrderDetails(Integer.parseInt(id));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			model.addAttribute("orderDetails", orderDetails);
+		}
+		return "update_order";
+	}
+
+	/**
+	 * Update order.
+	 *
+	 * @param orderDetails the order details
+	 * @param model the model
+	 * @param session the session
+	 * @return the string
+	 */
+	@PostMapping("/update_order")
+	public String updateOrder(@ModelAttribute OrderDetails orderDetails, Model model, HttpSession session) {
+		UserDetails userDetails = (UserDetails) session.getAttribute("userDetails");
+		if (null == userDetails) {
+			return "customer_home";
+		} else {
+			try {
+				orderService.createOrder(orderDetails);
+				model.addAttribute("successMsg", "Updated updated successfully");
+			} catch (Exception e) {
+				e.printStackTrace();
+				model.addAttribute("errorMsg", "Failed to update order");
+			}
+		}
+		return "update_order";
+	}
 }

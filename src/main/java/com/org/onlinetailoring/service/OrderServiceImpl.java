@@ -1,11 +1,13 @@
 package com.org.onlinetailoring.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.org.onlinetailoring.entity.OrderDetails;
+import com.org.onlinetailoring.exception.XasterException;
 import com.org.onlinetailoring.repository.OrderDetailsRepository;
 
 // TODO: Auto-generated Javadoc
@@ -25,9 +27,13 @@ public class OrderServiceImpl implements OrderService {
 	 * @see com.org.onlinetailoring.service.OrderService#getOrderDetails(java.lang.
 	 * Integer)
 	 */
-	public OrderDetails getOrderDetails(Integer OrderId) {
-		// TODO Auto-generated method stub
-		return null;
+	public OrderDetails getOrderDetails(Integer orderId) throws XasterException {
+		Optional<OrderDetails> orderDetails = orderDetailsRepository.findById(orderId);
+		if (orderDetails.isPresent()) {
+			return orderDetails.get();
+		} else {
+			throw new XasterException("invalid Order Details");
+		}
 	}
 
 	/*
